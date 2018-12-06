@@ -36,3 +36,17 @@ void war(vector<Layer> fit_net, vector<float> what_is_it) {
 	for (int i(0); i < fit_net[2].get_layer_size(); i++)
 		cout << print_layer(fit_net[2])[i] << " ";
 }
+
+vector<vector<float>> from_file(string filename, int set_size, int elements_in_set) {
+	ifstream fin(filename);
+	vector<vector<float>> dataset(set_size, vector<float>(elements_in_set));
+	while (!fin.eof()) {
+		for (int i(0); i < set_size; i++) {
+			for (int j(0); j < elements_in_set; j++)
+				fin >> dataset[i][j];
+		}
+	}
+
+	return dataset;
+}
+
