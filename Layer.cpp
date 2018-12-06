@@ -1,17 +1,31 @@
 #include <vector>
 #include "Layer.h"
-#include "Functions.h"
+#include <math.h>
+
+#define e_speed 5
 
 using namespace std;
 
-int Layer::layers_amount = 0;
+int Layer::layers_amount = 0; 
+
+float sigmoid(float arg) {
+
+	return 1 / (1 + exp(-arg));
+
+}
+
+float sigmoid_d(float arg) {
+
+	return arg * (1 - arg);
+
+}
 
 Layer::Layer(int size) {	
 	layers_amount++;
 	number_of_layer = layers_amount;
 	layer.resize(size);
 	layer_size = size;
-	E = 0.5;
+	E = e_speed;
 
 	}
 	
@@ -100,7 +114,6 @@ void Layer::set_deltas(Layer &next_layer) {
 
 	deltas = deltas_in;
 }
-
 
 void Layer::set_neuron_inputs(int neuron, int input, float value) {
 	layer[neuron].set_inputs(input, value);

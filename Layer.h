@@ -9,7 +9,7 @@ class Layer {
 	vector<float> deltas;
 	int layer_size;
 	int number_of_layer;
-	float E; // train speed
+	float E;
 
 public:
 	Layer(int size);

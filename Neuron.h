@@ -20,7 +20,6 @@ public:
 	void set_output(float value);
 	float get_output();
 
-//	vector<float> get_prev_layer_outputs(Layer prev_layer);
 	void get_neuro();
 		
 };
