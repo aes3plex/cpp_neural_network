@@ -2,7 +2,7 @@
 #include "Layer.h"
 #include <math.h>
 
-#define e_speed 5
+#define e_speed 1.2
 
 using namespace std;
 
